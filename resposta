@@ -1,0 +1,38 @@
+// Coleta dos dados de altura e gênero das 15 pessoas
+let pessoas = [
+  { altura: 175, genero: 'Masculino' },
+  { altura: 160, genero: 'Feminino' },
+  { altura: 180, genero: 'Masculino' },
+  { altura: 155, genero: 'Feminino' },
+  { altura: 170, genero: 'Masculino' },
+  { altura: 168, genero: 'Feminino' },
+  { altura: 186, genero: 'Masculino' },
+  { altura: 158, genero: 'Feminino' },
+  { altura: 176, genero: 'Masculino' },
+  { altura: 160, genero: 'Feminino' },
+  { altura: 167, genero: 'Masculino' },
+  { altura: 150, genero: 'Feminino' },
+  { altura: 197, genero: 'Masculino' },
+  { altura: 162, genero: 'Feminino' },
+  { altura: 178, genero: 'Masculino' }
+];
+
+// 1. Encontrar a maior e a menor altura do grupo
+let maiorAltura = Math.max(...pessoas.map(pessoa => pessoa.altura));
+let menorAltura = Math.min(...pessoas.map(pessoa => pessoa.altura));
+
+// 2. Calcular a média de altura das pessoas do gênero Masculino
+let pessoasMasculinas = pessoas.filter(pessoa => pessoa.genero === 'Masculino');
+let somaAlturasMasculinas = pessoasMasculinas.reduce((soma, pessoa) => soma + pessoa.altura, 0);
+let mediaAlturaMasculina = somaAlturasMasculinas / pessoasMasculinas.length;
+
+// 3. Contar o número de pessoas do gênero Feminino
+let numeroFeminino = pessoas.filter(pessoa => pessoa.genero === 'Feminino').length;
+
+// Exibindo os resultados
+console.log("Resultados da pesquisa:");
+
+console.log("1. Maior altura do grupo: " + maiorAltura + " cm");
+console.log("2. Menor altura do grupo: " + menorAltura + " cm");
+console.log("3. Média de altura das pessoas do gênero Masculino: " + mediaAlturaMasculina.toFixed(2) + " cm");
+console.log("4. Número de pessoas do gênero Feminino: " + numeroFeminino);
